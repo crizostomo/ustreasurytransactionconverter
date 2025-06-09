@@ -12,7 +12,7 @@ RUN mvn -f /building/pom.xml clean package
 
 # STAGE ii: Generate image
 
-FROM openjdk:17-alpine
+FROM openjdk:21-alpine
 COPY --from=builder /building/target/*.jar /app.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "/app.jar"]
