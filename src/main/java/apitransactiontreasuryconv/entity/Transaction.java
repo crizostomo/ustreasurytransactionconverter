@@ -12,6 +12,25 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Objects;
 
+/**
+ * Why this class is not a Java `record`:
+ *
+ * Although Java 17+ introduces `record` as a concise way to declare immutable data carriers,
+ * JPA (Hibernate) currently has limited and problematic support for `record`-based entities.
+ *
+ * Reasons:
+ *  - `record` fields are implicitly `final`, which prevents frameworks like Hibernate from
+ *    using reflection to inject values (e.g., setting `id` after persisting).
+ *  - Hibernate expects a no-arg constructor and mutable fields or setter methods for entity lifecycle operations.
+ *  - Attempting to use `record` for a JPA entity often leads to runtime exceptions such as:
+ *    `IllegalAccessException: Can not set final field ...`
+ *
+ * Java 21 provides powerful features, but for JPA entities, a standard class remains the reliable and supported choice.
+ *
+ * If immutability is desired for other non-JPA domain models or DTOs, `record` is still a great option there.
+ *
+ * Java 11 equivalent: This class follows the traditional POJO structure required for JPA entities.
+ */
 @Entity
 @Validated
 @Schema(name = "Entity for Transaction")
