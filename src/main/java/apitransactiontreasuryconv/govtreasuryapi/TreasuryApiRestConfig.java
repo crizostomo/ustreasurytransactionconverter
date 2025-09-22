@@ -5,6 +5,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
+/***
+ * Configuration problem: @Configuration class 'TreasuryApiRestConfig' may not be final.
+ */
 @Configuration
 public class TreasuryApiRestConfig {
 
