@@ -71,12 +71,12 @@ public class ExchangeRatesClient {
                 requestPath, TreasuryRatesDTO.class
         );
 
-        if (dto.getData().isEmpty()) {
+        if (dto.data().isEmpty()) {
             logger.error("No valid exchange rate available for transaction: {} with currency option: {}", transaction, currencyOption);
             throw new ExchangedRateNotFoundException("No valid exchange rate available for transaction conversion.");
         }
 
-        BigDecimal exchangeRate = dto.getData().get(0).exchangeRate();
+        BigDecimal exchangeRate = dto.data().get(0).exchangeRate();
 
         ExchangedTransaction exchangeRateTransaction = new ExchangedTransaction(
                 transaction.getId(),

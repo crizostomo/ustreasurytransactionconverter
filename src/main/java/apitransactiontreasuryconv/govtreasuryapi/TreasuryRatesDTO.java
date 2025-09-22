@@ -3,52 +3,21 @@ package apitransactiontreasuryconv.govtreasuryapi;
 import java.util.List;
 import java.util.Map;
 
-public class TreasuryRatesDTO {
-
-    private List<ExchangeRateRecordDTO> data;
-    private Map<String, Object> meta;
-    private Map<String, Object> link;
-
-    public TreasuryRatesDTO() {
-
-    }
-
-    public TreasuryRatesDTO(List<ExchangeRateRecordDTO> data, Map<String, Object> meta, Map<String, Object> link) {
-        this.data = data;
-        this.meta = meta;
-        this.link = link;
-    }
-
-    public List<ExchangeRateRecordDTO> getData() {
-        return data;
-    }
-
-    public void setData(List<ExchangeRateRecordDTO> data) {
-        this.data = data;
-    }
-
-    public Map<String, Object> getMeta() {
-        return meta;
-    }
-
-    public void setMeta(Map<String, Object> meta) {
-        this.meta = meta;
-    }
-
-    public Map<String, Object> getLink() {
-        return link;
-    }
-
-    public void setLink(Map<String, Object> link) {
-        this.link = link;
-    }
-
-    @Override
-    public String toString() {
-        return "USTreasuryRatesOfExchangeAPIResponseDTO{" +
-                "data=" + data +
-                ", meta=" + meta +
-                ", link=" + link +
-                '}';
-    }
+/***
+ * Java 21 Feature: `record` for immutable data classes
+ *
+ * ✅ Automatically generates:
+ *   - Constructor
+ *   - Getters (with field name)
+ *   - `toString()`, `equals()`, `hashCode()`
+ *
+ * Java 11 equivalent: Full POJO with fields, constructor, getters, setters, toString, etc.
+ */
+public record TreasuryRatesDTO(
+        List<ExchangeRateRecordDTO> data,
+        Map<String, Object> meta,
+        Map<String, Object> link
+) {
+    // No need for manual constructor or getters — `record` handles it.
+    // This class now expresses intent much more clearly: it is a read-only data container.
 }
