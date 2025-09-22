@@ -76,7 +76,7 @@ public class ExchangeRatesClient {
             throw new ExchangedRateNotFoundException("No valid exchange rate available for transaction conversion.");
         }
 
-        BigDecimal exchangeRate = dto.getData().get(0).getExchangeRate();
+        BigDecimal exchangeRate = dto.getData().get(0).exchangeRate();
 
         ExchangedTransaction exchangeRateTransaction = new ExchangedTransaction(
                 transaction.getId(),
