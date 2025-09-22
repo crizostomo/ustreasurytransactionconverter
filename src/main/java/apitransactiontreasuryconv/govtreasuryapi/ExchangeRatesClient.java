@@ -76,7 +76,12 @@ public class ExchangeRatesClient {
             throw new ExchangedRateNotFoundException("No valid exchange rate available for transaction conversion.");
         }
 
-        BigDecimal exchangeRate = dto.data().get(0).exchangeRate();
+
+        /***
+         * List.getFirst() was added in Java 21
+         * before it was needed to be using get(0))
+         */
+        BigDecimal exchangeRate = dto.data().getFirst().exchangeRate();
 
         ExchangedTransaction exchangeRateTransaction = new ExchangedTransaction(
                 transaction.getId(),
