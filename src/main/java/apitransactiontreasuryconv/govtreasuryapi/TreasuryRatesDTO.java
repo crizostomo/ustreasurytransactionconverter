@@ -18,6 +18,4 @@ public record TreasuryRatesDTO(
         Map<String, Object> meta,
         Map<String, Object> link
 ) {
-    // No need for manual constructor or getters — `record` handles it.
-    // This class now expresses intent much more clearly: it is a read-only data container.
 }
