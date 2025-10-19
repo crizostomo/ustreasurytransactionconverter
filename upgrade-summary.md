@@ -7,15 +7,15 @@ This document provides a structured overview of safe Java 17 to 21 upgrades appl
 
 ## ✅ Summary Table
 
-| File | Java 17–21 Upgrade Opportunities |
-|------|----------------------------------|
-| `ErrorDTO.java` | ✅ Convert to `record` |
-| `TransactionController.java` | ✅ Use `var`, `.toList()`, `formatted()` |
-| `Transaction.java` | ✅ Convert to `record` (if not JPA) |
-| `ExchangeRatesClient.java` | ✅ `var`, `String.formatted()`, consider `getFirst()` |
-| `USTreasuryRatesOfExchangeAPIService.java` | ✅ Replace `.get(0)` with `getFirst()` |
-| `ExchangeRateControllerTest.java` | ✅ Use `var` |
-| `TransactionControllerTest.java` | ✅ Use `var` |
+| File | Java 17–21 Upgrade Opportunities                   |
+|------|----------------------------------------------------|
+| `ErrorDTO.java` | ✅ Convert to `record`                              |
+| `TransactionController.java` | ✅ Use of `var`, `.toList()`, `formatted()`         |
+| `Transaction.java` | ✅ Convert to `record` (if not JPA)                 |
+| `ExchangeRatesClient.java` | ✅ `var`, `String.formatted()`, use of `getFirst()` |
+| `USTreasuryRatesOfExchangeAPIService.java` | ✅ Replace of `.get(0)` with `getFirst()`           |
+| `ExchangeRateControllerTest.java` | ✅ Use of `var`                                     |
+| `TransactionControllerTest.java` | ✅ Use of `var`                                     |
 
 ---
 
